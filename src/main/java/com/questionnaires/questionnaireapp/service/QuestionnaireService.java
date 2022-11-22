@@ -10,7 +10,9 @@ public interface QuestionnaireService {
 
     Questionnaire getQuestionnaire(Long id);
 
-    void saveQuestionnaire(Questionnaire questionnaire);
+    Questionnaire saveQuestionnaire(Questionnaire questionnaire);
+
+    Questionnaire updateQuestionnaire(Questionnaire questionnaire);
 
     void deleteQuestionnaire(Long id);
 

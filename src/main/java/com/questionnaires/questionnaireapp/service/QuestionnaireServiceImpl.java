@@ -30,8 +30,13 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
     }
 
     @Override
-    public void saveQuestionnaire(Questionnaire questionnaire) {
-        questionnaireRepository.save(questionnaire);
+    public Questionnaire saveQuestionnaire(Questionnaire questionnaire) {
+        return questionnaireRepository.save(questionnaire);
+    }
+
+    @Override
+    public Questionnaire updateQuestionnaire(Questionnaire questionnaire) {
+        return questionnaireRepository.save(questionnaire);
     }
 
     @Override
