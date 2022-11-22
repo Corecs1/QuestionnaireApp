@@ -2,17 +2,17 @@ package com.questionnaires.questionnaireapp.service;
 
 import com.questionnaires.questionnaireapp.dao.QuestionnaireRepository;
 import com.questionnaires.questionnaireapp.entity.Questionnaire;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Service
+@RequiredArgsConstructor
 public class QuestionnaireServiceImpl implements QuestionnaireService {
 
-    @Autowired
-    private QuestionnaireRepository questionnaireRepository;
+    private final QuestionnaireRepository questionnaireRepository;
 
     @Override
     public List<Questionnaire> getQuestionnaires() {
@@ -20,7 +20,7 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
     }
 
     @Override
-    public Questionnaire getQuestionnaire(int id) {
+    public Questionnaire getQuestionnaire(Long id) {
         Questionnaire questionnaire = null;
         Optional<Questionnaire> optional = questionnaireRepository.findById(id);
         if (optional.isPresent()) {
@@ -35,7 +35,7 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
     }
 
     @Override
-    public void deleteQuestionnaire(int id) {
+    public void deleteQuestionnaire(Long id) {
         questionnaireRepository.deleteById(id);
     }
 }

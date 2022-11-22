@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+/Для теста БД.txt
+/Снимок экрана 2022-11-20 233819.png
+/mvnw.cmd
+/mvnw
+/.mvn/

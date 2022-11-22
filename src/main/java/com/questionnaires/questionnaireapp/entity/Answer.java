@@ -1,31 +1,23 @@
 package com.questionnaires.questionnaireapp.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Answers")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Answer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "answer")
     private String answer;
-
-    public Answer() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
 }

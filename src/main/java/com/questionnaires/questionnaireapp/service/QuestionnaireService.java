@@ -1,20 +1,18 @@
 package com.questionnaires.questionnaireapp.service;
 
 import com.questionnaires.questionnaireapp.entity.Questionnaire;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface QuestionnaireService {
 
     List<Questionnaire> getQuestionnaires();
 
-    Questionnaire getQuestionnaire(int id);
+    Questionnaire getQuestionnaire(Long id);
 
     void saveQuestionnaire(Questionnaire questionnaire);
 
-    void deleteQuestionnaire(int id);
+    void deleteQuestionnaire(Long id);
 
 
 }
