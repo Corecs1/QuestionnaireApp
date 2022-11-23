@@ -1,4 +1,4 @@
-package com.questionnaires.questionnaireapp.service;
+package com.questionnaires.questionnaireapp.service.questionnaireService;
 
 import com.questionnaires.questionnaireapp.entity.questionnaireEntity.Questionnaire;
 

@@ -1,15 +1,17 @@
-package com.questionnaires.questionnaireapp.service;
+package com.questionnaires.questionnaireapp.service.questionnaireService;
 
 import com.questionnaires.questionnaireapp.dao.questionnaireDao.QuestionnaireRepository;
 import com.questionnaires.questionnaireapp.entity.questionnaireEntity.Questionnaire;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class QuestionnaireServiceImpl implements QuestionnaireService {
 
     private final QuestionnaireRepository questionnaireRepository;
