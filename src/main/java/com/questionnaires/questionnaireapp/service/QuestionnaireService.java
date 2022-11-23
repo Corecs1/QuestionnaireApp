@@ -1,6 +1,6 @@
 package com.questionnaires.questionnaireapp.service;
 
-import com.questionnaires.questionnaireapp.entity.Questionnaire;
+import com.questionnaires.questionnaireapp.entity.questionnaireEntity.Questionnaire;
 
 import java.util.List;
 

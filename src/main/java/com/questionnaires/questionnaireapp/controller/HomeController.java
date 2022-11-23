@@ -1,6 +1,6 @@
 package com.questionnaires.questionnaireapp.controller;
 
-import com.questionnaires.questionnaireapp.entity.Questionnaire;
+import com.questionnaires.questionnaireapp.entity.questionnaireEntity.Questionnaire;
 import com.questionnaires.questionnaireapp.service.QuestionnaireService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

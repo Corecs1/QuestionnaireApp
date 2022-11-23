@@ -1,7 +1,7 @@
 package com.questionnaires.questionnaireapp.service;
 
-import com.questionnaires.questionnaireapp.dao.QuestionnaireRepository;
-import com.questionnaires.questionnaireapp.entity.Questionnaire;
+import com.questionnaires.questionnaireapp.dao.questionnaireDao.QuestionnaireRepository;
+import com.questionnaires.questionnaireapp.entity.questionnaireEntity.Questionnaire;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.questionnaires.questionnaireapp.entity;
+package com.questionnaires.questionnaireapp.entity.questionnaireEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
