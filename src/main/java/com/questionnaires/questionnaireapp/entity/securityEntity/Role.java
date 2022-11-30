@@ -1,23 +1,23 @@
 package com.questionnaires.questionnaireapp.entity.securityEntity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Role {
+@RequiredArgsConstructor
+@Getter
+public enum Role {
+    ROLE_USER(Set.of(Permission.QUESTIONNAIRES_READ)),
+    ROLE_ADMIN(Set.of(Permission.QUESTIONNAIRES_READ, Permission.QUESTIONNAIRES_WRITE));
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private final Set<Permission> permissions;
 
-    private String name;
+    public Set<SimpleGrantedAuthority> getAuthorities() {
+        return getPermissions().stream()
+                .map(permission -> new SimpleGrantedAuthority(permission.getPermission()))
+                .collect(Collectors.toSet());
+    }
 }
