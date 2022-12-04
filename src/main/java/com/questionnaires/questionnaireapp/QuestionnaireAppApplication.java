@@ -19,7 +19,13 @@ public class QuestionnaireAppApplication {
     @Bean
     CommandLineRunner run(UserDetailsServiceImpl userDetailsService) {
         return args -> {
-            userDetailsService.saveUser(new User(null, "admin@gmail.com", "admin", "admin", "admin", Role.ROLE_ADMIN, Status.ACTIVE, null));
+            userDetailsService.saveUser(new User(null,
+                    "admin@gmail.com",
+                    "admin",
+                    "admin", "$2a$12$.0AskLTOTuFLcxJ58pDOOu/Wp4KDwRi9QwDLKugUo7VMTwK5SyKiS",
+                    Role.ROLE_ADMIN,
+                    Status.ACTIVE,
+                    null));
         };
     }
 }
