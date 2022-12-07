@@ -1,4 +1,4 @@
-package com.questionnaires.questionnaireapp.controller.securityController;
+package com.questionnaires.questionnaireapp.restController.securityRestController;
 
 import com.questionnaires.questionnaireapp.dao.securityDao.UserRepository;
 import com.questionnaires.questionnaireapp.dto.security.AuthenticationRequestDTO;
@@ -25,7 +25,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-public class AuthenticationController {
+public class AuthenticationRestController {
 
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;

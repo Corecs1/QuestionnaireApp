@@ -1,4 +1,4 @@
-package com.questionnaires.questionnaireapp.controller.questionnaireController;
+package com.questionnaires.questionnaireapp.restController.questionnaireRestController;
 
 import com.questionnaires.questionnaireapp.entity.questionnaireEntity.Questionnaire;
 import com.questionnaires.questionnaireapp.service.questionnaireService.QuestionnaireService;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
-public class HomeController {
+public class HomeRestController {
 
     private final QuestionnaireService questionnaireService;
 
