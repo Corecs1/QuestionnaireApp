@@ -37,7 +37,7 @@ public class QuestionnaireAppApplication {
                     "admin@gmail.com",
                     "admin",
                     "admin",
-                    "admin",
+                    "admin111",
                     Role.ROLE_ADMIN,
                     Status.ACTIVE,
                     null));
