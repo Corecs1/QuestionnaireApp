@@ -8,8 +8,8 @@ import {Observable, tap} from "rxjs";
 })
 export class AuthService {
 
-  private email = '';
-  private token = '';
+  private email = ''
+  private token = ''
 
   constructor(private http: HttpClient) {
   }
@@ -54,7 +54,7 @@ export class AuthService {
     localStorage.clear()
   }
 
-  register() {
-
+  register(user: User): Observable<User> {
+    return this.http.post<User>('/api/auth/register', user)
   }
 }

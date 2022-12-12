@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {AythLayuotComponent} from './shared/layouts/ayth-layuot/ayth-layuot.component';
-import {SiteLayuotComponent} from './shared/layouts/site-layuot/site-layuot.component';
+import {SiteLayoutComponent} from './shared/layouts/site-layuot/site-layout.component';
 import {RegistrationPageComponent} from './registration-page/registration-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
@@ -15,7 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
     AppComponent,
     LoginPageComponent,
     AythLayuotComponent,
-    SiteLayuotComponent,
+    SiteLayoutComponent,
     RegistrationPageComponent
   ],
   imports: [

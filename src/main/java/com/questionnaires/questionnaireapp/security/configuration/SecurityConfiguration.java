@@ -23,13 +23,12 @@ public class SecurityConfiguration {
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.
                 csrf().disable()
-                .formLogin()
-                .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/api/auth/login").permitAll()
+                .antMatchers("/api/auth/register").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
