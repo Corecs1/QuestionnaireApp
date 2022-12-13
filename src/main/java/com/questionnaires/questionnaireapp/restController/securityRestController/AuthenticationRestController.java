@@ -1,6 +1,7 @@
 package com.questionnaires.questionnaireapp.restController.securityRestController;
 
 import com.questionnaires.questionnaireapp.dto.security.AuthenticationRequestDTO;
+import com.questionnaires.questionnaireapp.dto.security.RegistrationRequestDTO;
 import com.questionnaires.questionnaireapp.entity.securityEntity.Role;
 import com.questionnaires.questionnaireapp.entity.securityEntity.Status;
 import com.questionnaires.questionnaireapp.entity.securityEntity.User;
@@ -56,13 +57,13 @@ public class AuthenticationRestController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody AuthenticationRequestDTO request) {
+    public ResponseEntity<?> register(@RequestBody RegistrationRequestDTO request) {
         try {
             User user = new User(
                     null,
                     request.getEmail(),
-                    null,
-                    null,
+                    request.getFirst_name(),
+                    request.getLast_name(),
                     request.getPassword(),
                     Role.ROLE_USER,
                     Status.ACTIVE,

@@ -22,7 +22,7 @@ public class User {
     private String email;
 
     @Column(name = "first_name")
-    private String fitsName;
+    private String firstName;
 
     @Column(name = "last_name")
     private String lastName;

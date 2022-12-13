@@ -9,6 +9,7 @@ import {SiteLayoutComponent} from './shared/layouts/site-layuot/site-layout.comp
 import {RegistrationPageComponent} from './registration-page/registration-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { QuestionnairePageComponent } from './questionnaire-page/questionnaire-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from "@angular/common/http";
     LoginPageComponent,
     AythLayuotComponent,
     SiteLayoutComponent,
-    RegistrationPageComponent
+    RegistrationPageComponent,
+    QuestionnairePageComponent
   ],
   imports: [
     BrowserModule,
