@@ -4,6 +4,7 @@ import {LoginPageComponent} from "./login-page/login-page.component";
 import {AythLayuotComponent} from "./shared/layouts/ayth-layuot/ayth-layuot.component";
 import {SiteLayoutComponent} from "./shared/layouts/site-layuot/site-layout.component";
 import {RegistrationPageComponent} from "./registration-page/registration-page.component";
+import {AuthGuard} from "./shared/classes/auth.guard";
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: '', component: SiteLayoutComponent, children: []
+    path: '', component: SiteLayoutComponent, canActivate: [AuthGuard], children: []
   },
 ]
 
