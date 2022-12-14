@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../shared/services/auth.service";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Params, Router} from "@angular/router";
+import {MaterialService} from "../shared/classes/material.service";
 
 
 @Component({
@@ -28,9 +29,11 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
     this.route.queryParams.subscribe((params: Params) => {
       if (params['registered']) {
-        // Авторизация прошла успешно
+        MaterialService.toast('Регистрация прошла успешно')
       } else if (params['accessDenied']) {
-        // Необходима авторизация в системе
+        MaterialService.toast('Необходимо авторизоваться в системе')
+      } else if (params['sessionFailed']) {
+        MaterialService.toast('Требуется повторная авторизация')
       }
     })
   }
@@ -47,7 +50,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     this.aSub = this.auth.login(this.form.value).subscribe(
       () => this.router.navigate(['/questionnaires']),
       error => {
-        console.warn(error)
+        MaterialService.toast(error.error)
         this.form.enable()
       }
     )

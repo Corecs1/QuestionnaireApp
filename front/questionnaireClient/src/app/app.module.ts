@@ -8,8 +8,9 @@ import {AythLayuotComponent} from './shared/layouts/ayth-layuot/ayth-layuot.comp
 import {SiteLayoutComponent} from './shared/layouts/site-layuot/site-layout.component';
 import {RegistrationPageComponent} from './registration-page/registration-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { QuestionnairePageComponent } from './questionnaire-page/questionnaire-page.component';
+import {TokenInterceptor} from "./shared/classes/token.interceptor";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,13 @@ import { QuestionnairePageComponent } from './questionnaire-page/questionnaire-p
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: TokenInterceptor
+    }
   ],
   bootstrap: [AppComponent]
 })

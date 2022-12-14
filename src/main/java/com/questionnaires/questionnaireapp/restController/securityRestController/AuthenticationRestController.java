@@ -46,7 +46,7 @@ public class AuthenticationRestController {
             response.put("token", token);
             return ResponseEntity.ok(response);
         } catch (AuthenticationException e) {
-            return new ResponseEntity<>("Invalid credential", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
         }
     }
 
@@ -71,7 +71,7 @@ public class AuthenticationRestController {
             userDetailsService.saveUser(user);
             return ResponseEntity.ok().body(HttpStatus.CREATED);
         } catch (AuthenticationException e) {
-            return new ResponseEntity<>("User has already exist", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Пользователь с email: " + request.getEmail() + " уже зарегистрирован", HttpStatus.FORBIDDEN);
         }
     }
 }
