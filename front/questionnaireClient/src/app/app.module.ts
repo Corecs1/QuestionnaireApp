@@ -11,6 +11,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { QuestionnairePageComponent } from './questionnaire-page/questionnaire-page.component';
 import {TokenInterceptor} from "./shared/classes/token.interceptor";
+import { CompletedQuestionnairesPageComponent } from './completed-questionnaires-page/completed-questionnaires-page.component';
+import { AddPageComponent } from './add-page/add-page.component';
+import { LoaderComponent } from './shared/components/loader/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import {TokenInterceptor} from "./shared/classes/token.interceptor";
     AythLayuotComponent,
     SiteLayoutComponent,
     RegistrationPageComponent,
-    QuestionnairePageComponent
+    QuestionnairePageComponent,
+    CompletedQuestionnairesPageComponent,
+    AddPageComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

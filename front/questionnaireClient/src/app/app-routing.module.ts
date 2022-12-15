@@ -5,6 +5,11 @@ import {AythLayuotComponent} from "./shared/layouts/ayth-layuot/ayth-layuot.comp
 import {SiteLayoutComponent} from "./shared/layouts/site-layuot/site-layout.component";
 import {RegistrationPageComponent} from "./registration-page/registration-page.component";
 import {AuthGuard} from "./shared/classes/auth.guard";
+import {QuestionnairePageComponent} from "./questionnaire-page/questionnaire-page.component";
+import {
+  CompletedQuestionnairesPageComponent
+} from "./completed-questionnaires-page/completed-questionnaires-page.component";
+import {AddPageComponent} from "./add-page/add-page.component";
 
 const routes: Routes = [
   {
@@ -15,7 +20,11 @@ const routes: Routes = [
     ]
   },
   {
-    path: '', component: SiteLayoutComponent, canActivate: [AuthGuard], children: []
+    path: '', component: SiteLayoutComponent, canActivate: [AuthGuard], children: [
+      {path: 'questionnaires', component: QuestionnairePageComponent},
+      {path: 'completed_questionnaires', component: CompletedQuestionnairesPageComponent},
+      {path: 'add', component: AddPageComponent}
+    ]
   },
 ]
 
