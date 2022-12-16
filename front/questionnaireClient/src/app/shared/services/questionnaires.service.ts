@@ -14,4 +14,8 @@ export class QuestionnairesService {
   fetch(): Observable<Questionnaire[]> {
     return this.http.get<Questionnaire[]>('/api/questionnaires')
   }
+
+  getQuestionnaire(id: number): Observable<Questionnaire> {
+    return this.http.get<Questionnaire>(`/api/questionnaires/${id}`)
+  }
 }

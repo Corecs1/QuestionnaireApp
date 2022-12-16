@@ -1,0 +1,17 @@
+<div>
+  <form class="alert alert-info- mt-2" *ngIf="questionnaire$ | async as questionnaire; else loader">
+    <h4 class="fw-light" [textContent]="questionnaire.name"></h4>
+    <ng-container class="alert alert-info- mt-2" *ngFor="let question of questionnaire.questions">
+      <h4 class="fw-light" [textContent]="question.question"></h4>
+      <ng-container class="alert alert-info- mt-2" *ngFor="let answer of question.answers">
+        <input type="checkbox" name="color" value="white" [outerText]="answer.answer"/>
+      </ng-container>
+    </ng-container>
+    <input type="submit" value="OK"/>
+    <input type="reset" value="Reset"/>
+  </form>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

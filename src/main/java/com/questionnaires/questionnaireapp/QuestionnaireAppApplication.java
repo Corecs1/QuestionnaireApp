@@ -45,13 +45,29 @@ public class QuestionnaireAppApplication {
             List<Answer> answers = new ArrayList<>();
             answers.add(new Answer(null, "9"));
             answers.add(new Answer(null, "15"));
+            answers.add(new Answer(null, "3"));
+            answers.add(new Answer(null, "5"));
 
             List<Question> questions = new ArrayList<>();
             questions.add(new Question(null, "10+5=?", answers));
+            questions.add(new Question(null, "9-4=?", answers));
 
             Questionnaire questionnaire = new Questionnaire(null, "Math", questions);
 
             questionnaireService.saveQuestionnaire(questionnaire);
+
+            List<Answer> answers1 = new ArrayList<>();
+            answers1.add(new Answer(null, "Латте"));
+            answers1.add(new Answer(null, "Американо"));
+            answers1.add(new Answer(null, "Эспрессо"));
+            answers1.add(new Answer(null, "Капучино"));
+
+            List<Question> questions1 = new ArrayList<>();
+            questions1.add(new Question(null, "Выберите ваш любимый кофе", answers1));
+
+            Questionnaire questionnaire1 = new Questionnaire(null, "Любимый кофе", questions1);
+
+            questionnaireService.saveQuestionnaire(questionnaire1);
         };
     }
 }

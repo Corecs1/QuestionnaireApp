@@ -1,0 +1,29 @@
+<div class="page-title">
+  <h4>Анкеты</h4>
+</div>
+
+<div
+  class="row"
+  *ngIf="questionnaires$ | async as questionnaires; else loader"
+>
+  <div class="col s12">
+    <div class="collection" *ngIf="questionnaires.length !== 0; else empty">
+      <a
+        *ngFor="let questionnaire of questionnaires"
+        [routerLink]="['/questionnaires', questionnaire.id]"
+        class="collection-item"
+      >
+        {{questionnaire.name}}
+      </a>
+    </div>
+    <ng-template #empty>
+      <div class="center">
+        Анкеты отсутствуют
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
